@@ -9,23 +9,22 @@ import contactRoutes from "./routes/contact.routes.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const app = express();
-const PORT = process.env.PORT || 5000;
-
 // Load environment variables from .env file
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+const __dirname = path.resolve();
 
 // Middleware to parse JSON requests
 app.use(express.json({ limit: "50mb" }));
 
 app.use(cookieParser());
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello, World!");
+// });
 
 app.use("/api/projects", projectRoutes);
 app.use("/api/blogs", blogRoutes);
@@ -37,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
   if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "frontend", "dist")));
 
-    app.get("/*", (req, res) => {
+    app.get("*", (req, res) => {
       res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
     });
   }
