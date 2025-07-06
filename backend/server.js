@@ -27,10 +27,10 @@ app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
-app.use("/api/projects", projectRoutes);
-app.use("/api/blogs", blogRoutes);
-app.use("/api/subscriber", subscriberRoutes);
-app.use("/api/contact", contactRoutes);
+// app.use("/api/projects", projectRoutes);
+// app.use("/api/blogs", blogRoutes);
+// app.use("/api/subscriber", subscriberRoutes);
+// app.use("/api/contact", contactRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Serve static files from the React frontend app
