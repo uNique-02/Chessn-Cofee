@@ -26,7 +26,7 @@ function App() {
           <Route path="blogs" element={<BlogsDashboard />} />
         </Route>
         <Route path="/auth" element={<AuthPage />} />
-        <Route path="*" element={<NotFound />}></Route>
+        {/* <Route path="*" element={<NotFound />}></Route> */}
       </Routes>
     </>
   );
