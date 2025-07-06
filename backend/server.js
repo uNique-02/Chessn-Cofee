@@ -31,12 +31,16 @@ app.use("/api/contact", contactRoutes);
 
 // Production: serve frontend
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "frontend", "dist")));
+  const frontendDistPath = path.join(__dirname, "..", "frontend", "dist");
+
+  app.use(express.static(frontendDistPath));
 
   app.get("/{*any}", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+    res.sendFile(path.join(frontendDistPath, "index.html"));
   });
 }
+
+//Solution: https://stackoverflow.com/questions/79553495/throw-new-typeerrormissing-parameter-name-at-i-debug-url
 
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
