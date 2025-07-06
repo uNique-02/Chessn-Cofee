@@ -7,6 +7,7 @@ import blogRoutes from "./routes/blog.route.js";
 import subscriberRoutes from "./routes/subscriber.routes.js";
 import contactRoutes from "./routes/contact.routes.js";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,7 +15,8 @@ const PORT = process.env.PORT || 5000;
 // Load environment variables from .env file
 dotenv.config();
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Middleware to parse JSON requests
 app.use(express.json({ limit: "50mb" }));
