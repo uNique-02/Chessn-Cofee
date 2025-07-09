@@ -9,11 +9,46 @@ export default function Footer() {
         </button>
         <p className="text-center">© Chess n' Coffee</p>
         <div className="flex items-center space-x-3 text-gray-500 text-base">
-          <Github className="w-4 h-4" />
-          <X className="w-4 h-4" />
-          <Linkedin className="w-4 h-4" />
-          <Instagram className="w-4 h-4" />
-          <Dribbble className="w-4 h-4" />
+          <a
+            href="https://github.com/uNique-02"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <Github className="w-4 h-4 hover:text-black transition-colors" />
+          </a>
+          <a
+            href="https://x.com/niqueK_02"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+          >
+            <X className="w-4 h-4 hover:text-black transition-colors" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kim-nique/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-4 h-4 hover:text-black transition-colors" />
+          </a>
+          <a
+            href="https://www.instagram.com/odisacmik/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-4 h-4 hover:text-black transition-colors" />
+          </a>
+          {/* <a
+            href="https://dribbble.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Dribbble"
+          >
+            <Dribbble className="w-4 h-4 hover:text-black transition-colors" />
+          </a> */}
         </div>
       </div>
     </footer>

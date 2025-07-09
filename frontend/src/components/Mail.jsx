@@ -85,7 +85,7 @@ export default function ContactSection() {
               <h3 className="font-semibold text-lg mb-2">Find Me Here</h3>
               <div className="flex items-center text-gray-700 mb-2">
                 <Mail className="w-5 h-5 mr-2 text-pink-500" />
-                <span>your.email@example.com</span>
+                <span>kcnique@up.edu.ph</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <MessageSquare className="w-5 h-5 mr-2 text-pink-500" />
@@ -97,19 +97,42 @@ export default function ContactSection() {
               <h3 className="font-semibold text-lg mb-2">Connect With Me</h3>
               <div className="flex gap-3">
                 {[
-                  { icon: <Github />, label: "GitHub" },
-                  { icon: <X />, label: "X" },
-                  { icon: <Linkedin />, label: "LinkedIn" },
-                  { icon: <Instagram />, label: "Instagram" },
-                  { icon: <Dribbble />, label: "Dribbble" },
-                ].map(({ icon, label }, idx) => (
-                  <button
+                  {
+                    icon: <Github />,
+                    label: "GitHub",
+                    href: "https://github.com/uNique-02",
+                  },
+                  {
+                    icon: <X />,
+                    label: "X",
+                    href: "https://x.com/niqueK_02",
+                  },
+                  {
+                    icon: <Linkedin />,
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/in/kim-nique/",
+                  },
+                  {
+                    icon: <Instagram />,
+                    label: "Instagram",
+                    href: "https://www.instagram.com/odisacmik/",
+                  },
+                  // {
+                  //   icon: <Dribbble />,
+                  //   label: "Dribbble",
+                  //   href: "https://dribbble.com/yourusername",
+                  // },
+                ].map(({ icon, label, href }, idx) => (
+                  <a
                     key={idx}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 rounded-full border border-pink-400 text-pink-500 hover:bg-pink-100"
                     aria-label={label}
                   >
                     {icon}
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
