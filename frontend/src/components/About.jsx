@@ -3,23 +3,32 @@ import { FaDownload } from "react-icons/fa";
 import ProfilePic from "../assets/profile-pic.png";
 
 const skills = [
-  "TypeScript",
+  "Java",
+  "Kotlin",
+  "Python",
+  "C",
+  "SQL",
+  "JavaScript",
+  "HTML/CSS",
   "React",
   "Node.js",
-  "Python",
-  "AWS",
-  "Docker",
+  "Express",
+  "Ruby on Rails",
+  "Bootstrap",
+  "Jetpack Compose",
   "Git",
-  "SQL",
-  "TailwindCSS",
-  "Figma",
-  "Next.js",
-  "GraphQL",
-  "DevOps",
-  "Machine Learning",
+  "Android Studio",
+  "VS Code",
+  "IntelliJ IDEA",
+  "Postman",
+  "MongoDB",
+  "MySQL",
 ];
 
 export default function AboutMe() {
+  const resumeUrl =
+    "https://res.cloudinary.com/dfkrqvmq8/image/upload/v1752039031/RESUME_-_Nique_Kim_p6ovg0.pdf";
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-white px-6 py-12">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12">
@@ -74,7 +83,9 @@ export default function AboutMe() {
           </div>
 
           <a
-            href="/path/to/resume.pdf"
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-pink-500 text-white font-semibold px-4 py-2 rounded-full shadow hover:bg-pink-600 transition"
             download
           >
